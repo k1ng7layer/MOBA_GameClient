@@ -1,5 +1,28 @@
 {
   "dependencies": {
+    "com.elestrago.simpleui": {
+      "version": "https://gitlab.com/elestrago63/simpleui.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d3da3af148b172c7a4702c54f8853013fb52fc26"
+    },
+    "com.playdarium.unirx": {
+      "version": "https://gitlab.com/nazgull30/unirxplaydarium.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d77bbf9e51e5f3d31cb1b66d9746b3ae92b490fe"
+    },
+    "com.playdarium.zenject": {
+      "version": "https://gitlab.com/nazgull30/zenjectplaydarium.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.playdarium.unirx": "https://gitlab.com/nazgull30/unirxplaydarium.git#upm"
+      },
+      "hash": "75ab5f7f27e257e8b35d5e44bf13f927781e9551"
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.5",
       "depth": 0,
