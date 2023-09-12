@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 700069614174513462, guid: 767b0dab32801495a946c78549830ae0, type: 3}
   connectionView: {fileID: 2166665845884665449, guid: efb0ffd2612aa4202a58e726121aa69d, type: 3}
+  characterPickListView: {fileID: 8823013898591865621, guid: 94275a0d55836424196ca79b80983ea7, type: 3}

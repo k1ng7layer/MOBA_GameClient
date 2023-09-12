@@ -1,4 +1,5 @@
 using SimpleUi;
+using UI.CharacterPick.Controller;
 
 namespace UI.CharacterPick.Windows
 {
@@ -8,7 +9,7 @@ namespace UI.CharacterPick.Windows
         
         protected override void AddControllers()
         {
-            throw new System.NotImplementedException();
+            AddController<CharacterPickListController>();
         }
     }
 }

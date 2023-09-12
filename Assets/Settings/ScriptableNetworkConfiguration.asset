@@ -16,7 +16,7 @@ MonoBehaviour:
   serverPort: 7779
   localIp: 127.0.0.1
   localPort: 7777
-  connectionTimeOut: 1000
+  connectionTimeOut: 3000
   clientCheckAliveTimeOut: 4000
   serverClientDisconnectTime: 7000
   clientCheckAliveTime: 3000
