@@ -50,6 +50,7 @@ namespace UI.ConnectionWindow.Controllers
 
         private IEnumerator ConnectRoutine()
         {
+            _networkClientManager.StartClient();
             Debug.Log($"ConnectRoutine");
             View.connectionButton.interactable = false;
             
@@ -61,9 +62,13 @@ namespace UI.ConnectionWindow.Controllers
             }
 
             var result = task.Result;
-            
+
             if (result.ConnectionResult != EConnectionResult.Success)
+            {
+                _networkClientManager.StopClient();
                 View.connectionButton.interactable = true;
+            }
+            
             
             Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
         }
