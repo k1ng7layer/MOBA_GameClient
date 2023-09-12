@@ -1,20 +1,22 @@
 ﻿using Core.Systems;
-using PBUnityMultiplayer.Runtime.Core.Client;
+using SimpleUi.Signals;
+using UI.ConnectionWindow.Window;
+using Zenject;
 
 namespace Systems
 {
     public class StartClientSystem : IInitializeSystem
     {
-        private readonly INetworkClientManager _networkClientManager;
+        private readonly SignalBus _signalBus;
 
-        public StartClientSystem(INetworkClientManager networkClientManager)
+        public StartClientSystem(SignalBus signalBus)
         {
-            _networkClientManager = networkClientManager;
+            _signalBus = signalBus;
         }
         
         public void Initialize()
         {
-            
+            _signalBus.OpenWindow<ConnectionWindow>();
         }
     }
 }
