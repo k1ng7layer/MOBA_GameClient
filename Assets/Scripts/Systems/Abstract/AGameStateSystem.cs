@@ -6,6 +6,7 @@ using Utils;
 namespace Systems.Abstract
 {
     public abstract class AGameStateSystem : IInitializeSystem, 
+        IGameStateListener,
         IDisposable
     {
         private readonly IGameStateProvider _gameStateProvider;
@@ -15,27 +16,24 @@ namespace Systems.Abstract
             _gameStateProvider = gameStateProvider;
         }
         
-        protected abstract EGameState GameState { get; }
+        public abstract EGameState GameState { get; }
         
-        public void Initialize()
+        void IInitializeSystem.Initialize()
         {
-            _gameStateProvider.GameStateChanged += OnStateChanged;
+            _gameStateProvider.AddGameStateListener(this);
         }
 
-        private void OnStateChanged(EGameState gameState)
+        void IGameStateListener.OnGameStateChanged()
         {
-            if(gameState != GameState)
-                return;
-
-            OnGameStateChanged();
+            OnStateChanged();
         }
 
-        protected abstract void OnGameStateChanged();
+        protected abstract void OnStateChanged();
 
         void IDisposable.Dispose()
         {
+            _gameStateProvider.RemoveGameStateListener(this);
             OnDisposing();
-            _gameStateProvider.GameStateChanged -= OnStateChanged;
         }
 
         protected virtual void OnDisposing()

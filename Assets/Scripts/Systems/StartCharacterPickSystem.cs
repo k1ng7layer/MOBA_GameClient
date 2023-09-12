@@ -18,9 +18,9 @@ namespace Systems
             _signalBus = signalBus;
         }
 
-        protected override EGameState GameState => EGameState.CharacterPick;
+        public override EGameState GameState => EGameState.CharacterPick;
         
-        protected override void OnGameStateChanged()
+        protected override void OnStateChanged()
         {
             _signalBus.OpenWindow<CharacterPickWindow>();
         }
