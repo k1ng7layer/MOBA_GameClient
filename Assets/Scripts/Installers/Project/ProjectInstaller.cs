@@ -3,6 +3,7 @@ using PBUnityMultiplayer.Runtime.Core.Client;
 using PBUnityMultiplayer.Runtime.Core.Client.Impl;
 using PBUnityMultiplayer.Runtime.Core.Server;
 using PBUnityMultiplayer.Runtime.Core.Server.Impl;
+using Services.GameState.Impl;
 using Services.SceneLoading;
 using Services.SceneLoading.Impls;
 using Systems;
@@ -23,6 +24,7 @@ namespace Installers.Project
                 .AsSingle().NonLazy();
 
             Container.BindInterfacesAndSelfTo<SetGameStateSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameStateProvider>().AsSingle();
             
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.BindInterfacesTo<LoadingProcessor>().AsSingle();

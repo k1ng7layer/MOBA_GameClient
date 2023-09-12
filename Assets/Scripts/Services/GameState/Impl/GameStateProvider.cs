@@ -17,6 +17,16 @@ namespace Services.GameState.Impl
             CurrentState = gameState;
             
             GameStateChanged?.Invoke(gameState);
+            
+            var hasListeners = _gameStateListeners.TryGetValue(gameState, out var listeners);
+
+            if (hasListeners)
+            {
+                foreach (var listener in listeners)
+                {
+                    listener.OnGameStateChanged();
+                }
+            }
         }
 
         public void AddGameStateListener(IGameStateListener gameStateListener)
