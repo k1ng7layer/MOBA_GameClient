@@ -12,7 +12,8 @@ namespace Systems
 
         public StartCharacterPickSystem(
             IGameStateProvider gameStateProvider, 
-            SignalBus signalBus) : base(gameStateProvider)
+            SignalBus signalBus
+        ) : base(gameStateProvider)
         {
             _signalBus = signalBus;
         }
@@ -22,7 +23,6 @@ namespace Systems
         protected override void OnGameStateChanged()
         {
             _signalBus.OpenWindow<CharacterPickWindow>();
-            
         }
     }
 }

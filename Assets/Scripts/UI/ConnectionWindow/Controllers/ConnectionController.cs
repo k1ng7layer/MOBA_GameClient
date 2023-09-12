@@ -6,6 +6,7 @@ using PBUnityMultiplayer.Runtime.Core.Authentication;
 using PBUnityMultiplayer.Runtime.Core.Client;
 using PBUnityMultiplayer.Runtime.Utils;
 using SimpleUi.Abstracts;
+using SimpleUi.Signals;
 using UI.ConnectionWindow.View;
 using UniRx;
 using UniRx.Async;
@@ -19,13 +20,16 @@ namespace UI.ConnectionWindow.Controllers
     {
         private readonly INetworkClientManager _networkClientManager;
         private readonly INetworkConfiguration _networkConfiguration;
+        private readonly SignalBus _signalBus;
 
         public ConnectionController(
             INetworkClientManager networkClientManager, 
-            INetworkConfiguration networkConfiguration)
+            INetworkConfiguration networkConfiguration,
+            SignalBus signalBus)
         {
             _networkClientManager = networkClientManager;
             _networkConfiguration = networkConfiguration;
+            _signalBus = signalBus;
         }
         
         public void Initialize()
@@ -36,22 +40,10 @@ namespace UI.ConnectionWindow.Controllers
              }).AddTo(View);
         }
 
-        private async UniTaskVoid Next()
-        {
-            View.connectionButton.interactable = false;
-            
-            var result = await Connect();
-            
-            if (result.ConnectionResult != EConnectionResult.Success)
-                View.connectionButton.interactable = true;
-            
-            Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
-        }
-
         private IEnumerator ConnectRoutine()
         {
             _networkClientManager.StartClient();
-            Debug.Log($"ConnectRoutine");
+         
             View.connectionButton.interactable = false;
             
             var task = Connect();
@@ -68,7 +60,7 @@ namespace UI.ConnectionWindow.Controllers
                 _networkClientManager.StopClient();
                 View.connectionButton.interactable = true;
             }
-            
+           
             
             Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
         }
