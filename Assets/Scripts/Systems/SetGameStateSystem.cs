@@ -2,6 +2,7 @@
 using Messages;
 using PBUnityMultiplayer.Runtime.Core.Client;
 using Services.GameState;
+using UnityEngine;
 
 namespace Systems
 {
@@ -26,9 +27,9 @@ namespace Systems
         
         private void OnServerStateChanged(ServerGameState serverGameState)
         {
-            var newServerState = serverGameState.State;
-            
-            _gameStateProvider.SetState(newServerState);
+            var gameStateId = serverGameState.gameStateId;
+            var gameState = (EGameState)gameStateId;
+            _gameStateProvider.SetState(gameState);
         }
     }
 }

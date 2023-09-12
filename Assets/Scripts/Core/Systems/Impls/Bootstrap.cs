@@ -18,7 +18,7 @@ namespace Core.Systems.Impls
         private bool _isPaused;
         
         public Bootstrap(
-            [InjectLocal] List<ISystem> systems)
+            List<ISystem> systems)
         {
             for (int i = 0; i < systems.Count; i++)
             {

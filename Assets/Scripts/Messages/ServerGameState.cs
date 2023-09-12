@@ -6,6 +6,6 @@ namespace Messages
     [Serializable]
     public struct ServerGameState
     {
-        public EGameState State;
+        public int gameStateId;
     }
 }

@@ -22,12 +22,12 @@ namespace Installers.Project
             Container.Bind<INetworkClientManager>().To<NetworkClientManager>()
                 .FromInstance(client)
                 .AsSingle().NonLazy();
-
-            Container.BindInterfacesAndSelfTo<SetGameStateSystem>().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<GameStateProvider>().AsSingle();
             
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.BindInterfacesTo<LoadingProcessor>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SetGameStateSystem>().AsSingle();
             
             SignalBusInstaller.Install(Container);
         }

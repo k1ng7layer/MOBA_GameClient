@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Messages;
 using PBUnityMultiplayer.Runtime.Core.Client;
+using UnityEngine;
 
 namespace Services.GameState.Impl
 {
@@ -27,6 +28,8 @@ namespace Services.GameState.Impl
                     listener.OnGameStateChanged();
                 }
             }
+            
+            Debug.Log($"server changed state to {gameState}");
         }
 
         public void AddGameStateListener(IGameStateListener gameStateListener)
