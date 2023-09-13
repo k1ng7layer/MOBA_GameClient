@@ -8,6 +8,7 @@ using Services.SceneLoading;
 using Services.SceneLoading.Impls;
 using Systems;
 using UnityEngine;
+using Utils.ZenjectUtils;
 using Zenject;
 
 namespace Installers.Project
@@ -19,8 +20,7 @@ namespace Installers.Project
         public override void InstallBindings()
         {
             var client = Container.InstantiatePrefabForComponent<NetworkClientManager>(clientManager);
-            Container.Bind<INetworkClientManager>().To<NetworkClientManager>()
-                .FromInstance(client)
+            Container.BindFromSubstitute<INetworkClientManager>(client)
                 .AsSingle().NonLazy();
             
             Container.BindInterfacesAndSelfTo<GameStateProvider>().AsSingle();
