@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1353cdc36e1b4cb79394d4aa69641d4d, type: 3}
   m_Name: SoCharactersBase
   m_EditorClassIdentifier: 
-  characterVos: []
+  characterVos:
+  - prefabId: 0
+    characterName: Paata
+    characterIcon: {fileID: 0}
+  - prefabId: 1
+    characterName: Nastuxa
+    characterIcon: {fileID: 0}

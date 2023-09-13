@@ -30,6 +30,8 @@ namespace UI.CharacterPick.Controller
             View.lockCharacterBtn.OnClickAsObservable()
                 .Subscribe(_ => SelectCharacter())
                 .AddTo(View);
+
+            View.selectedCharacterNameText.text = string.Empty;
         }
         
         public override void OnShow()
@@ -77,11 +79,10 @@ namespace UI.CharacterPick.Controller
         {
             var selected = _charactersBase.GetCharacter(id);
             View.selectedCharacterNameText.text = selected.characterName;
-
+            
             foreach (var element in View.characterPickListCollection)
             {
-                if(element.Id != id)
-                    element.SetSelected(false);
+                element.SetSelected(element.Id == id);
             }
         }
     }
