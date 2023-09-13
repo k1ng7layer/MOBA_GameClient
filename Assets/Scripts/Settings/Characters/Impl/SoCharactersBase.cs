@@ -9,7 +9,7 @@ namespace Settings.Characters.Impl
     public class SoCharactersBase : ScriptableObject, 
         ICharactersBase
     {
-        [KeyValue(nameof(CharacterVo.id))]
+        [KeyValue(nameof(CharacterVo.prefabId))]
         [SerializeField] private List<CharacterVo> characterVos;
         
         public IReadOnlyList<CharacterVo> GetCharacters()
@@ -22,7 +22,7 @@ namespace Settings.Characters.Impl
             for (var i = 0; i < characterVos.Count; i++)
             {
                 var characterVo = characterVos[i];
-                if (characterVo.id == id)
+                if (characterVo.prefabId == id)
                     return characterVo;
             }
 

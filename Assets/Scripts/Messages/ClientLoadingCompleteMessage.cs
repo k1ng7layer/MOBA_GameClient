@@ -5,11 +5,11 @@ namespace Messages
     [Serializable]
     public readonly struct ClientLoadingCompleteMessage
     {
-        public readonly int ClientId;
+        public readonly int clientId;
 
         public ClientLoadingCompleteMessage(int clientId)
         {
-            ClientId = clientId;
+            this.clientId = clientId;
         }
     }
 }

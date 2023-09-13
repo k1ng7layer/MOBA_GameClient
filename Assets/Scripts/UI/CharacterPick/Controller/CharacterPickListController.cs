@@ -65,7 +65,7 @@ namespace UI.CharacterPick.Controller
             {
                 var characterPickViewElement = View.characterPickListCollection.Create();
                 
-                characterPickViewElement.Initialize(characterVo.id, characterVo.characterIcon);
+                characterPickViewElement.Initialize(characterVo.prefabId, characterVo.characterIcon);
                 
                 characterPickViewElement.Selected
                     .Subscribe(OnElementSelected)

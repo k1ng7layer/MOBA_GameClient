@@ -6,7 +6,7 @@ namespace Settings.Characters
     [Serializable]
     public class CharacterVo
     {
-        public int id;
+        public int prefabId;
         public string characterName;
         public Sprite characterIcon;
     }
