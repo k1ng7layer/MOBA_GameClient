@@ -5,7 +5,9 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "UniTask",
-        "pbunitymultiplayer"
+        "pbunitymultiplayer",
+        "Zenject",
+        "TestUtils"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
