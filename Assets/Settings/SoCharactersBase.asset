@@ -16,6 +16,3 @@ MonoBehaviour:
   - prefabId: 0
     characterName: Paata
     characterIcon: {fileID: 0}
-  - prefabId: 1
-    characterName: Nastuxa
-    characterIcon: {fileID: 0}

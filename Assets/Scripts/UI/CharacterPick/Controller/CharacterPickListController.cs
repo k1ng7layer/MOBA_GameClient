@@ -5,6 +5,7 @@ using Settings.Characters;
 using SimpleUi.Abstracts;
 using UI.CharacterPick.View;
 using UniRx;
+using UnityEngine;
 using Zenject;
 
 namespace UI.CharacterPick.Controller
@@ -55,7 +56,11 @@ namespace UI.CharacterPick.Controller
         {
             var clientId = _networkClientManager.LocalClient.Id;
 
-            var message = new CharacterSelectMessage(clientId, _selectedCharacterId);
+            var message = new CharacterPickMessage
+            {
+                CharacterId = _selectedCharacterId,
+                ClientId = clientId
+            };
             _networkClientManager.SendMessage(message, ESendMode.Reliable);
         }
 
@@ -84,6 +89,14 @@ namespace UI.CharacterPick.Controller
             {
                 element.SetSelected(element.Id == id);
             }
+            Debug.Log($"OnElementSelected = {_networkClientManager.LocalClient.Id}");
+            var message = new CharacterSelectMessage
+            {
+                CharacterId = id,
+                ClientId = _networkClientManager.LocalClient.Id
+            };
+            
+            _networkClientManager.SendMessage(message, ESendMode.Reliable);
         }
     }
 }

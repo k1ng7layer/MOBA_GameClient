@@ -50,6 +50,7 @@ namespace UI.ConnectionWindow.Controllers
 
             while (!task.IsCompleted)
             {
+                //Debug.Log($"connection...");
                 yield return null;
             }
 
