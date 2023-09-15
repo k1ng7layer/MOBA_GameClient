@@ -15,15 +15,14 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<Bootstrap>().AsSingle();
             Container.BindInterfacesAndSelfTo<UnityTimeProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameTimerProvider>().AsSingle();
-            Container.BindInterfacesAndSelfTo<StartClientSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartGameSystem>().AsSingle();
 
             BindWindows();
         }
 
         private void BindWindows()
         {
-            Container.BindInterfacesAndSelfTo<ConnectionWindow>().AsSingle();
-            Container.BindInterfacesAndSelfTo<CharacterPickWindow>().AsSingle();
+     
         }
     }
 }

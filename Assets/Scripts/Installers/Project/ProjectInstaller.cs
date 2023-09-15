@@ -28,6 +28,7 @@ namespace Installers.Project
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.BindInterfacesTo<LoadingProcessor>().AsSingle();
             Container.BindInterfacesAndSelfTo<SetGameStateSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartLoadGameSystem>().AsSingle();
             
             SignalBusInstaller.Install(Container);
         }

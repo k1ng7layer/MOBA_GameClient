@@ -26,7 +26,7 @@ namespace Systems
 
         void IDisposable.Dispose()
         {
-            _networkClientManager.StopClient();
+            //_networkClientManager.StopClient();
         }
     }
 }

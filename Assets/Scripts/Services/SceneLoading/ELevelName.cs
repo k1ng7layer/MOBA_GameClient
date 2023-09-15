@@ -4,5 +4,6 @@
     {
         Splash,
         Menu,
+        Game
     }
 }
