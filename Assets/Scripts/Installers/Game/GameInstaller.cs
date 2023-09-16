@@ -1,4 +1,5 @@
 using Core.Systems.Impls;
+using Services.Camera;
 using Services.GameTimer.Impl;
 using Services.TimeProvider.Impl;
 using Systems;
@@ -12,17 +13,29 @@ namespace Installers.Game
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<Bootstrap>().AsSingle();
-            Container.BindInterfacesAndSelfTo<UnityTimeProvider>().AsSingle();
-            Container.BindInterfacesAndSelfTo<GameTimerProvider>().AsSingle();
-            Container.BindInterfacesAndSelfTo<StartGameSystem>().AsSingle();
-
+            BindManagers();
+            BindSystems();
             BindWindows();
         }
 
         private void BindWindows()
         {
      
+        }
+
+        private void BindSystems()
+        {
+            Container.BindInterfacesAndSelfTo<Bootstrap>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartGameSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SpawnCharactersSystem>().AsSingle();
+        }
+
+        private void BindManagers()
+        {
+           
+            Container.BindInterfacesAndSelfTo<UnityTimeProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameTimerProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CameraService>().AsSingle();
         }
     }
 }

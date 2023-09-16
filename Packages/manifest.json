@@ -3,6 +3,7 @@
     "com.elestrago.simpleui": "https://gitlab.com/elestrago63/simpleui.git#upm",
     "com.playdarium.unirx": "https://gitlab.com/nazgull30/unirxplaydarium.git#upm",
     "com.playdarium.zenject": "https://gitlab.com/nazgull30/zenjectplaydarium.git#upm",
+    "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.24",
