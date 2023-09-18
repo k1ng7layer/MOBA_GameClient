@@ -30,6 +30,7 @@ namespace Systems.Abstract
         }
 
         protected abstract void OnStateChanged();
+        
         protected virtual void OnInitialize()
         {}
 

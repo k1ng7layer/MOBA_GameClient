@@ -13,6 +13,8 @@ namespace Views
         [SerializeField] private CinemachineVirtualCamera gameVirtualCamera;
 
         private ICameraService _cameraService;
+
+        public Camera GameCamera => gameCamera;
         
         [Inject]
         private void Construct(ICameraService cameraService)
