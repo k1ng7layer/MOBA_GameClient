@@ -3,8 +3,10 @@ using Messages;
 using PBUnityMultiplayer.Runtime.Core.Client;
 using PBUnityMultiplayer.Runtime.Core.NetworkObjects;
 using Services.Camera;
+using Services.CharacterManager;
 using Services.GameState;
 using Systems.Abstract;
+using Views.Character.Impl;
 
 namespace Systems
 {
@@ -12,15 +14,18 @@ namespace Systems
     {
         private readonly INetworkClientManager _networkClientManager;
         private readonly ICameraService _cameraService;
+        private readonly ICharacterManager _characterManager;
 
         public SpawnCharactersSystem(
             IGameStateProvider gameStateProvider, 
             INetworkClientManager networkClientManager,
-            ICameraService cameraService
+            ICameraService cameraService,
+            ICharacterManager characterManager
             ) : base(gameStateProvider)
         {
             _networkClientManager = networkClientManager;
             _cameraService = cameraService;
+            _characterManager = characterManager;
         }
 
         public override EGameState GameState => EGameState.Game;
@@ -40,7 +45,12 @@ namespace Systems
             CharacterSpawnMessage characterSpawnMessage
         )
         {
-            _cameraService.SetFollowTarget(networkObject.transform);
+            
+            var characterView = networkObject.GetComponent<CharacterView>();
+            _characterManager.InitializeCharacter(characterView);
+            
+            if(networkObject.OwnerId == _networkClientManager.LocalClient.Id)
+                _cameraService.SetFollowTarget(networkObject.transform);
         }
     }
 }

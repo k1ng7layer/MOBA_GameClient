@@ -1,4 +1,5 @@
 using UnityEngine;
+using Views.Character;
 
 namespace Presenters.Impl
 {

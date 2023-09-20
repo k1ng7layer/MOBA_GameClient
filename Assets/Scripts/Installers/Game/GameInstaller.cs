@@ -1,5 +1,8 @@
 using Core.Systems.Impls;
+using Factories.Character;
+using Presenters.Impl;
 using Services.Camera;
+using Services.CharacterPresenterRepository.Impl;
 using Services.GameField;
 using Services.GameField.Impl;
 using Services.GameTimer.Impl;
@@ -11,6 +14,7 @@ using UI.CharacterPick.Windows;
 using UI.ConnectionWindow.Window;
 using UnityEngine;
 using Views;
+using Views.Character.Impl;
 using Zenject;
 
 namespace Installers.Game
@@ -27,6 +31,7 @@ namespace Installers.Game
             BindManagers();
             BindSystems();
             BindWindows();
+            BindFactories();
         }
 
         private void BindWindows()
@@ -40,6 +45,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<StartGameSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<SpawnCharactersSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerDestinationSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CharacterProcessSystem>().AsSingle();
         }
 
         private void BindManagers()
@@ -50,6 +56,13 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<UnityTimeProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameTimerProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerInputService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CharacterPresenterRepository>().AsSingle();
+        }
+
+        private void BindFactories()
+        {
+            Container.BindFactory<CharacterView, Models.Character, CharacterPresenter, CharacterPresenterFactory>().AsSingle();
+            Container.BindFactory<Models.Character, CharacterFactory>().AsSingle();
         }
     }
 }

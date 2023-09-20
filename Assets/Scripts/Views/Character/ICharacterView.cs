@@ -1,4 +1,3 @@
-using Views.Interfaces;
 
 namespace Views.Character
 {

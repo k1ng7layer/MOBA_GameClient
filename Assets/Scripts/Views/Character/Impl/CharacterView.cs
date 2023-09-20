@@ -1,12 +1,11 @@
 using PBUnityMultiplayer.Runtime.Core.NetworkObjects;
 using UnityEngine;
 using UnityEngine.AI;
-using Views.Interfaces;
-using NetworkView = Views.Network.NetworkView;
+using Views.Network;
 
 namespace Views.Character.Impl
 {
-    public class CharacterView : NetworkView, 
+    public class CharacterView : Network.NetworkView,
         ICharacterView
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
