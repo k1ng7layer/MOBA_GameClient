@@ -8,6 +8,7 @@ namespace Services.PlayerProvider.Impl
         private readonly List<Player> _redTeam = new();
         private readonly List<Player> _blueTeam = new();
 
+        public Player LocalPlayer { get; set; }
         public IReadOnlyDictionary<int, Player> Players => _players;
 
         public IReadOnlyList<Player> RedTeam => _redTeam;

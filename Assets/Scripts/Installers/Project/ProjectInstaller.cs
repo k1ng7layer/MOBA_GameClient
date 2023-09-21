@@ -4,6 +4,7 @@ using PBUnityMultiplayer.Runtime.Core.Client.Impl;
 using PBUnityMultiplayer.Runtime.Core.Server;
 using PBUnityMultiplayer.Runtime.Core.Server.Impl;
 using Services.GameState.Impl;
+using Services.PlayerProvider.Impl;
 using Services.SceneLoading;
 using Services.SceneLoading.Impls;
 using Systems;
@@ -29,6 +30,7 @@ namespace Installers.Project
             Container.BindInterfacesTo<LoadingProcessor>().AsSingle();
             Container.BindInterfacesAndSelfTo<SetGameStateSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<StartLoadGameSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerProvider>().AsSingle();
             
             SignalBusInstaller.Install(Container);
         }

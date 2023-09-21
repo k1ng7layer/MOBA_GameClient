@@ -7,6 +7,7 @@ using Services.GameField;
 using Services.GameField.Impl;
 using Services.GameTimer.Impl;
 using Services.Input.Impl;
+using Services.PlayerProvider.Impl;
 using Services.TimeProvider.Impl;
 using Systems;
 using Systems.Input;
@@ -30,13 +31,7 @@ namespace Installers.Game
 
             BindManagers();
             BindSystems();
-            BindWindows();
             BindFactories();
-        }
-
-        private void BindWindows()
-        {
-     
         }
 
         private void BindSystems()

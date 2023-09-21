@@ -13,6 +13,6 @@
         
         public int Id { get; }
         public ETeamType TeamType { get; }
-        public int CharacterId { get; set; }
+        public int CharacterObjectNetworkId { get; set; }
     }
 }

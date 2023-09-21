@@ -1,6 +1,7 @@
 using Messages;
 using PBUdpTransport.Utils;
 using PBUnityMultiplayer.Runtime.Core.Client;
+using Services.PlayerProvider;
 using Settings.Characters;
 using SimpleUi.Abstracts;
 using UI.CharacterPick.View;
@@ -19,7 +20,8 @@ namespace UI.CharacterPick.Controller
 
         public CharacterPickListController(
             ICharactersBase charactersBase, 
-            INetworkClientManager networkClientManager
+            INetworkClientManager networkClientManager,
+            IPlayerProvider playerProvider
         )
         {
             _charactersBase = charactersBase;
@@ -61,6 +63,7 @@ namespace UI.CharacterPick.Controller
                 CharacterId = _selectedCharacterId,
                 ClientId = clientId
             };
+            
             _networkClientManager.SendMessage(message, ESendMode.Reliable);
         }
 
