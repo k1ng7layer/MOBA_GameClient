@@ -17,6 +17,8 @@ namespace Views.Character.Impl
             navMeshAgent.SetDestination(destination);
         }
 
+        public Vector3 Position => transform.position;
+
         public void Initialize(int prefabId)
         {
             PrefabId = prefabId;

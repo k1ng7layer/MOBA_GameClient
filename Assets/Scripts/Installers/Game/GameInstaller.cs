@@ -41,6 +41,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<SpawnCharactersSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerDestinationSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterProcessSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CharacterPositionSystem>().AsSingle();
         }
 
         private void BindManagers()

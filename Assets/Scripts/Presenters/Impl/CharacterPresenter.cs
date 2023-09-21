@@ -17,6 +17,8 @@ namespace Presenters.Impl
             _character = character;
         }
 
+        public ICharacterView View => _characterView;
+
         public void SetDestination(Vector3 destination)
         {
             _characterView.SetDestination(destination);

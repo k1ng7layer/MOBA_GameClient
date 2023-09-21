@@ -5,6 +5,7 @@ using PBUdpTransport.Utils;
 using PBUnityMultiplayer.Runtime.Core.Client;
 using Services.GameState;
 using Systems.Abstract;
+using UnityEngine;
 
 namespace Systems
 {
@@ -24,6 +25,7 @@ namespace Systems
             var clientId = _networkClientManager.LocalClient.Id;
             var message = new ClientLoadingCompleteMessage(clientId);
             
+            Debug.Log($"send ready message for client id {clientId}");
             _networkClientManager.SendMessage(message, ESendMode.Reliable);
         }
 
