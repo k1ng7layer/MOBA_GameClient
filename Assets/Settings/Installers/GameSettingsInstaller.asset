@@ -16,3 +16,4 @@ MonoBehaviour:
   soCharactersBase: {fileID: 11400000, guid: d09209423b3ba4ee8b43492df1490890, type: 2}
   timeSettings: {fileID: 11400000, guid: b17816c6dac28bd43b42032254611f1d, type: 2}
   networkPrefabsBase: {fileID: 11400000, guid: a6d76cddbc78cd84984a780dc124d0b4, type: 2}
+  synchronizationSettings: {fileID: 11400000, guid: 66c6877650c9f0c49aeb594b9037662e, type: 2}

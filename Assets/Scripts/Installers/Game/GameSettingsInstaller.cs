@@ -1,6 +1,7 @@
 using PBUnityMultiplayer.Runtime.Configuration.Connection.Impl;
 using PBUnityMultiplayer.Runtime.Configuration.Prefabs.Impl;
 using Settings.Characters.Impl;
+using Settings.Synchronization.Impl;
 using Settings.TimeSettings.Impl;
 using UnityEngine;
 using Zenject;
@@ -14,6 +15,7 @@ namespace Installers.Game
         [SerializeField] private SoCharactersBase soCharactersBase;
         [SerializeField] private SoTimeSettings timeSettings;
         [SerializeField] private NetworkPrefabsBase networkPrefabsBase;
+        [SerializeField] private SynchronizationSettings synchronizationSettings;
         
         public override void InstallBindings()
         {
@@ -21,6 +23,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<SoCharactersBase>().FromInstance(soCharactersBase);
             Container.BindInterfacesAndSelfTo<SoTimeSettings>().FromInstance(timeSettings);
             Container.BindInterfacesAndSelfTo<NetworkPrefabsBase>().FromInstance(networkPrefabsBase);
+            Container.BindInterfacesAndSelfTo<SynchronizationSettings>().FromInstance(synchronizationSettings);
         }
     }
 }

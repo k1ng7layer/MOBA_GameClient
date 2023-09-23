@@ -42,6 +42,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<PlayerDestinationSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterProcessSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterPositionSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SynchronizePositionSystem>().AsSingle();
         }
 
         private void BindManagers()

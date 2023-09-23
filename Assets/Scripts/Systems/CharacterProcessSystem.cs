@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using Core.Systems;
+﻿using Core.Systems;
 using Factories.Character;
-using Presenters;
 using Presenters.Impl;
 using Services.CharacterManager;
 using Services.CharacterPresenterRepository;
@@ -15,12 +13,12 @@ namespace Systems
         private readonly CharacterFactory _characterFactory;
         private readonly CharacterPresenterFactory _characterPresenterFactory;
         private readonly ICharacterPresenterRepository _characterPresenterRepository;
-        private readonly List<ICharacterPresenter> _characterPresenters = new();
 
         public CharacterProcessSystem(
             CharacterFactory characterFactory,
             CharacterPresenterFactory characterPresenterFactory,
-            ICharacterPresenterRepository characterPresenterRepository)
+            ICharacterPresenterRepository characterPresenterRepository
+        )
         {
             _characterFactory = characterFactory;
             _characterPresenterFactory = characterPresenterFactory;
@@ -37,7 +35,6 @@ namespace Systems
             var character = _characterFactory.Create();
             var characterPresenter = _characterPresenterFactory.Create(characterView, character);
             var networkId = characterView.NetworkObjectId;
-            _characterPresenters.Add(characterPresenter);
             _characterPresenterRepository.Add(networkId, characterPresenter);
         }
     }

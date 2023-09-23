@@ -23,5 +23,10 @@ namespace Views.Character.Impl
         {
             PrefabId = prefabId;
         }
+
+        public void Teleport(Vector3 position)
+        {
+            navMeshAgent.Warp(position);
+        }
     }
 }
