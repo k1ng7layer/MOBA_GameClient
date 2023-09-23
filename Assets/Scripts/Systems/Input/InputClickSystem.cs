@@ -67,7 +67,7 @@ namespace Systems.Input
             }
             else
             {
-                Debug.Log($"{hit.transform.gameObject}");
+                //Debug.Log($"{hit.transform.gameObject}");
             }
         }
     }
