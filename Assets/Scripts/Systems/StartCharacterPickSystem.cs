@@ -44,7 +44,7 @@ namespace Systems
         {
             var team = (ETeamType)message.teamIndex;
 
-            Debug.Log($"OnTeamAssigned = {team}");
+            //Debug.Log($"OnTeamAssigned = {team}");
             _playerProvider.LocalPlayer = new Player(_networkClientManager.LocalClient.Id, team);
         }
     }

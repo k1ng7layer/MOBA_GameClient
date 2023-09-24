@@ -7,6 +7,7 @@ using Services.CharacterManager;
 using Services.GameState;
 using Services.PlayerProvider;
 using Systems.Abstract;
+using UnityEngine;
 using Views.Character.Impl;
 
 namespace Systems
@@ -52,7 +53,7 @@ namespace Systems
             
             var characterView = networkObject.GetComponent<CharacterView>();
             _characterManager.InitializeCharacter(characterView);
-
+            Debug.Log($"OnCharacterSpawn owner {networkObject.Id}");
             if (networkObject.OwnerId == _networkClientManager.LocalClient.Id)
             {
                 _cameraService.SetFollowTarget(networkObject.transform);

@@ -63,7 +63,7 @@ namespace UI.ConnectionWindow.Controllers
             }
            
             
-            Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
+            //Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
         }
 
         private async UniTask<AuthenticateResult> Connect()
