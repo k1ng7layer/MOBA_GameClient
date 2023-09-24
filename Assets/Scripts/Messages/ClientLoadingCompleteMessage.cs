@@ -3,13 +3,8 @@
 namespace Messages
 {
     [Serializable]
-    public readonly struct ClientLoadingCompleteMessage
+    public struct ClientLoadingCompleteMessage
     {
-        public readonly int clientId;
-
-        public ClientLoadingCompleteMessage(int clientId)
-        {
-            this.clientId = clientId;
-        }
+        public int clientId;
     }
 }

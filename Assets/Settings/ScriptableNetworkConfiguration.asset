@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13a8806bce47d8aa2277b96642ca86, type: 3}
   m_Name: ScriptableNetworkConfiguration
   m_EditorClassIdentifier: 
-  serverIp: 127.0.0.1
+  serverIp: 192.168.1.234
   serverPort: 7779
-  localIp: 127.0.0.1
+  localIp: 192.168.1.234
   localPort: 7777
   connectionTimeOut: 3000
   clientCheckAliveTimeOut: 4000

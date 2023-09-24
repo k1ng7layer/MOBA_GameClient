@@ -23,7 +23,10 @@ namespace Systems
         public void Initialize()
         {
             var clientId = _networkClientManager.LocalClient.Id;
-            var message = new ClientLoadingCompleteMessage(clientId);
+            var message = new ClientLoadingCompleteMessage
+            {
+                clientId = clientId
+            };
             
             Debug.Log($"send ready message for client id {clientId}");
             _networkClientManager.SendMessage(message, ESendMode.Reliable);
