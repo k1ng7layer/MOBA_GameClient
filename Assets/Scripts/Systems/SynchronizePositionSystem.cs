@@ -39,7 +39,7 @@ namespace Systems
 
             var hasPresenter = _characterPresenterRepository.TryGetPresenter(characterId, out var presenter);
             
-            if(hasPresenter)
+            if(!hasPresenter)
                 return;
 
             var clientPosition = presenter.Position;
