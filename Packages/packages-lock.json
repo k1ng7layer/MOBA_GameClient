@@ -167,6 +167,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.veriorpies.parrelsync": {
+      "version": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "141b4e1e31966242a6fb7c495b52ac3d1221bc75"
+    },
     "pbunitymultiplayer": {
       "version": "https://github.com/k1ng7layer/PBUnityMultiplayer.git",
       "depth": 0,
