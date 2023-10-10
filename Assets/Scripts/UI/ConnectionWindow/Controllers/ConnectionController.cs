@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Net;
 using Core.Systems;
-using PBUnityMultiplayer.Runtime.Configuration.Connection;
 using PBUnityMultiplayer.Runtime.Core.Authentication;
 using PBUnityMultiplayer.Runtime.Core.Client;
 using PBUnityMultiplayer.Runtime.Utils;
@@ -19,61 +18,19 @@ namespace UI.ConnectionWindow.Controllers
         IInitializable
     {
         private readonly INetworkClientManager _networkClientManager;
-        private readonly INetworkConfiguration _networkConfiguration;
-        private readonly SignalBus _signalBus;
 
-        public ConnectionController(
-            INetworkClientManager networkClientManager, 
-            INetworkConfiguration networkConfiguration,
-            SignalBus signalBus)
+        public ConnectionController(INetworkClientManager networkClientManager)
         {
             _networkClientManager = networkClientManager;
-            _networkConfiguration = networkConfiguration;
-            _signalBus = signalBus;
         }
         
         public void Initialize()
         {
             View.connectionButton.OnClickAsObservable().Subscribe(_ =>
-             {
-                 View.StartCoroutine(ConnectRoutine());
-             }).AddTo(View);
-        }
-
-        private IEnumerator ConnectRoutine()
-        {
-            _networkClientManager.StartClient();
-         
-            View.connectionButton.interactable = false;
-            
-            var task = Connect();
-
-            while (!task.IsCompleted)
             {
-                //Debug.Log($"connection...");
-                yield return null;
-            }
-
-            var result = task.Result;
-
-            if (result.ConnectionResult != EConnectionResult.Success)
-            {
-                _networkClientManager.StopClient();
-                View.connectionButton.interactable = true;
-            }
-           
-            
-            //Debug.Log($"connection result = {result.ConnectionResult}, reason = {result.Message}");
-        }
-
-        private async UniTask<AuthenticateResult> Connect()
-        {
-            var serverIpStr = _networkConfiguration.ServerIp;
-            var serverPort = _networkConfiguration.ServerPort;
-            var serverIp = IPAddress.Parse(serverIpStr);
-            var serverEndPoint = new IPEndPoint(serverIp, serverPort);
-            
-            return await _networkClientManager.ConnectToServerAsClientAsync(serverEndPoint, "12");
+               _networkClientManager.StartClient();
+               _networkClientManager.ConnectToServer("12");
+            }).AddTo(View);
         }
     }
 }

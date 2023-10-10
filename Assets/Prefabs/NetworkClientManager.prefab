@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4097872906464514121}
   - component: {fileID: 969260911173454667}
-  - component: {fileID: 8121247616590319927}
+  - component: {fileID: 1031083779693165251}
   m_Layer: 0
   m_Name: NetworkClientManager
   m_TagString: Untagged
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea67b349e2343488327078a97b02fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkConfiguration: {fileID: 11400000, guid: fbb39f93c92e35a4c973042f895c0fe1, type: 2}
+  clientConfiguration: {fileID: 11400000, guid: cabd76a4a2304d04492a676596c8b4be, type: 2}
   networkPrefabsBase: {fileID: 11400000, guid: a6d76cddbc78cd84984a780dc124d0b4, type: 2}
-  transportBase: {fileID: 8121247616590319927}
---- !u!114 &8121247616590319927
+  transportBase: {fileID: 1031083779693165251}
+--- !u!114 &1031083779693165251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,6 +57,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4097872906464514127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49dd3a5d28964b54b9579a94bae5de93, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e115e77f0934240a4e16cecdb5fd143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

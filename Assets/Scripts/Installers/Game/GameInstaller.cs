@@ -8,6 +8,7 @@ using Services.GameField.Impl;
 using Services.GameTimer.Impl;
 using Services.Input.Impl;
 using Services.PlayerProvider.Impl;
+using Services.Spawn.Impl;
 using Services.TimeProvider.Impl;
 using Systems;
 using Systems.Input;
@@ -40,7 +41,6 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<StartGameSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<SpawnCharactersSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerDestinationSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<CharacterProcessSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterPositionSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<SynchronizePositionSystem>().AsSingle();
         }
@@ -54,6 +54,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<GameTimerProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerInputService>().AsSingle();
             Container.BindInterfacesAndSelfTo<CharacterPresenterRepository>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SpawnManager>().AsSingle();
         }
 
         private void BindFactories()

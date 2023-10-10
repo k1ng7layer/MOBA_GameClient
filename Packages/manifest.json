@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.coffee.upm-git-extension": "https://github.com/mob-sakai/UpmGitExtension.git",
     "com.elestrago.simpleui": "https://gitlab.com/elestrago63/simpleui.git#upm",
     "com.playdarium.unirx": "https://gitlab.com/nazgull30/unirxplaydarium.git#upm",
     "com.playdarium.zenject": "https://gitlab.com/nazgull30/zenjectplaydarium.git#upm",
@@ -15,7 +16,7 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
     "com.veriorpies.parrelsync": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync",
-    "pbunitymultiplayer": "https://github.com/k1ng7layer/PBUnityMultiplayer.git",
+    "pbunitymultiplayer": "https://github.com/k1ng7layer/PBUnityMultiplayer.git#main",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

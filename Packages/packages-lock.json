@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.coffee.upm-git-extension": {
+      "version": "https://github.com/mob-sakai/UpmGitExtension.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d0c1cbb5415f5accf6a1d49d1dc91cf7d4fb11b9"
+    },
     "com.elestrago.simpleui": {
       "version": "https://gitlab.com/elestrago63/simpleui.git#upm",
       "depth": 0,
@@ -175,11 +182,11 @@
       "hash": "141b4e1e31966242a6fb7c495b52ac3d1221bc75"
     },
     "pbunitymultiplayer": {
-      "version": "https://github.com/k1ng7layer/PBUnityMultiplayer.git",
+      "version": "https://github.com/k1ng7layer/PBUnityMultiplayer.git#main",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a01180b4c1ef0dea1f12733361895f86fc9dfe6c"
+      "hash": "b3673f5aa0b673186c8db4f5c4f556b25e72558b"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
